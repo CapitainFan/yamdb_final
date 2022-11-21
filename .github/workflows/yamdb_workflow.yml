@@ -44,7 +44,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: sokolnikovbogdan/yamdb:latest
+          tags: docker.io/sokolnikovbogdan/yamdb:latest
 
   deploy:
     runs-on: ubuntu-latest
