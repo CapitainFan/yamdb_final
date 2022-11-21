@@ -1,6 +1,6 @@
-from rest_framework_simplejwt.tokens import AccessToken
-from django.core.mail import EmailMessage
 from django.conf import settings
+from django.core.mail import EmailMessage
+from rest_framework_simplejwt.tokens import AccessToken
 
 
 def send_email(email, confirmation_code):

@@ -1,31 +1,27 @@
-from django.db.models import Avg
 from django.contrib.auth.tokens import default_token_generator
+from django.db.models import Avg
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-
-from rest_framework import filters, generics, status, viewsets, mixins
-from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
+from rest_framework import filters, generics, mixins, status, viewsets
 from rest_framework.decorators import action
-from rest_framework.permissions import (IsAuthenticated,
+from rest_framework.permissions import (AllowAny, IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
-
-from reviews.models import Title, Category, Genre, Review
+from rest_framework.response import Response
+from reviews.models import Category, Genre, Review, Title
 from users.models import User
 
-from .filters import TitleFilter
 from .confirmation import get_tokens_for_user, send_email
-from .permissions import (OwnerOrAdmins, IsAdminOrReadOnly,
-                          AuthorAndStaffOrReadOnly)
-from .serializers import (CodeSerializer, SignupSerializer,
-                          UserSerializer, MeSerializer,
-                          TitleROSerializer, TitleRWSerializer,
-                          ReviewSerializer, CommentSerializer,
-                          CategorySerializer, GenreSerializer)
+from .filters import TitleFilter
+from .permissions import (AuthorAndStaffOrReadOnly, IsAdminOrReadOnly,
+                          OwnerOrAdmins)
+from .serializers import (CategorySerializer, CodeSerializer,
+                          CommentSerializer, GenreSerializer, MeSerializer,
+                          ReviewSerializer, SignupSerializer,
+                          TitleROSerializer, TitleRWSerializer, UserSerializer)
 
 
-class SignupUserAPIView(generics.CreateAPIView):
+class ConfirmationAPIView(generics.CreateAPIView):
     """Обработка запроса на регистрацию от нового пользователя"""
     serializer_class = SignupSerializer
     permission_classes = (AllowAny,)
@@ -42,7 +38,7 @@ class SignupUserAPIView(generics.CreateAPIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class TokenAuthApiView(generics.CreateAPIView):
+class UserCreateAPIView(generics.CreateAPIView):
     """Получение access-токена."""
     serializer_class = CodeSerializer
     permission_classes = (AllowAny,)
@@ -78,14 +74,15 @@ class UserViewSet(viewsets.ModelViewSet):
     )
     def get_patch_me(self, request):
         user = request.user
-        if request.method == 'GET':
+        if request.method == 'GET' or 'PATCH':
+            if request.method == 'PATCH':
+                serial = MeSerializer(user, data=request.data, partial=True)
+                serial.is_valid(raise_exception=True)
+                serial.save()
+                return Response(serial.data, status=status.HTTP_200_OK)
             serializer = MeSerializer(user)
             return Response(serializer.data, status=status.HTTP_200_OK)
-        if request.method == 'PATCH':
-            serializer = MeSerializer(user, data=request.data, partial=True)
-            serializer.is_valid(raise_exception=True)
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_200_OK)
+        return None
 
 
 class TitleViewSet(viewsets.ModelViewSet):
@@ -133,8 +130,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         title = get_object_or_404(Title, id=self.kwargs.get('title_id'))
-        new_queryset = title.reviews.all()
-        return new_queryset
+        return title.reviews.all()
 
     def perform_create(self, serializer):
         title = get_object_or_404(Title, id=self.kwargs.get('title_id'))
