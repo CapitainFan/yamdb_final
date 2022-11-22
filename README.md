@@ -6,15 +6,16 @@
 
 ## Технологии :
 - ООП
+- DRF
 - Django
 - Docker
-- Gunicorn
-- GitHub Actions
 - Git
+- GitHub Actions
+- Gunicorn
 - Nginx
 - REST API
-- Python 3.7
 - PostgreSQL
+- Python 3.7
 - pytest
 - flake8
 
