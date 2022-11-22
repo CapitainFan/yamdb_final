@@ -22,8 +22,7 @@
 ## Как испоьзовать проект
 
 
-### Установка Docker
-Установите Docker, используя инструкции с официального сайта:
+### Установка Docker с инструкциями с официального сайта:
 
 - для [Windows и MacOS](https://www.docker.com/products/docker-desktop) 
 - для [Linux](https://docs.docker.com/engine/install/ubuntu/). Установите [Docker Compose](https://docs.docker.com/compose/install/)
