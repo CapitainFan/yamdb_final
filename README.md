@@ -28,7 +28,7 @@
 - для [Linux](https://docs.docker.com/engine/install/ubuntu/). Установите [Docker Compose](https://docs.docker.com/compose/install/)
 
 
-### Установка проекта (на примере Linux Ubuntu)
+### Установка проекта (Linux Ubuntu)
 
 - Создайте папку для проекта YaMDb `mkdir yamdb` и перейдите в нее `cd yamdb`
 - Склонируйте этот репозиторий в текущую папку `git clone https://github.com/ifize/yamdb_final .`.
