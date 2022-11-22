@@ -21,7 +21,6 @@
 
 ## Как использовать проект
 
-
 ### Установка Docker с инструкциями с официального сайта:
 
 - для [Windows и MacOS](https://www.docker.com/products/docker-desktop) 
