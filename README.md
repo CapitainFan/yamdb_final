@@ -1,4 +1,4 @@
-# yamdb
+# Yamdb
 
 ![yamdb](https://github.com/CapitainFan/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
 
