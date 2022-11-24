@@ -34,7 +34,7 @@ https://thebestmessager.ddns.net/
 ### Установка проекта (Linux Ubuntu)
 
 - Создайте папку для проекта YaMDb `mkdir yamdb` и перейдите в нее `cd yamdb`
-- Склонируйте этот репозиторий в текущую папку `git clone https://github.com/ifize/yamdb_final .`.
+- Склонируйте этот репозиторий в текущую папку `git@github.com:CapitainFan/yamdb_final.git`
 - Создайте файл `.env` командой `touch .env` и добавьте в него переменные окружения для работы с базой данных:
 
 ```
