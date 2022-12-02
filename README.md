@@ -21,7 +21,7 @@
 
 ## Вот ссылка на мой проект в сети :
 
-https://thebestmessager.ddns.net/
+http://eloquence.ddns.net/
 
 ## Как использовать проект
 
