@@ -19,7 +19,7 @@
 - pytest
 - flake8
 
-## Вот ссылка на мой проект:
+## Ссылка на мой проект:
 
 http://eloquence.ddns.net/
 
