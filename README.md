@@ -21,7 +21,7 @@
 
 ## Ссылка на мой проект :
 
-http://eloquence.ddns.net/
+http://eloquence.ddns.net/admin/
 
 ## Как использовать проект
 
