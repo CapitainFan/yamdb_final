@@ -46,7 +46,7 @@ jobs:
         with:
           context: api_yamdb/
           push: true
-          tags: sokolnikovbogdan/infra_action:latest
+          tags: sokolnikovbogdan/yamdb_final:latest
 
   deploy:
     runs-on: ubuntu-latest

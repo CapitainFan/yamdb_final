@@ -10,7 +10,7 @@ services:
 
 
   web:
-    image: sokolnikovbogdan/infra_action
+    image: sokolnikovbogdan/yamdb_final:latest
     restart: always
     volumes:
       - static_value:/app/static/
