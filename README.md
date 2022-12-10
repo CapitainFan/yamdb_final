@@ -38,11 +38,11 @@ http://notify.ddns.net/api/v1/
 - Создайте файл `.env` командой `touch .env` и добавьте в него переменные окружения для работы с базой данных:
 
 ```
-DB_NAME=postgres # имя базы данных
-POSTGRES_USER=postgres # логин для подключения к базе данных
-POSTGRES_PASSWORD=postgres # пароль для подключения к БД (установите свой)
-DB_HOST=db # название сервиса (контейнер в котором будет развернута БД)
-DB_PORT=5432 # порт для подключения к БД
+DB_NAME=postgres
+POSTGRES_USER=postgres 
+POSTGRES_PASSWORD=postgres
+DB_HOST=db
+DB_PORT=5432
 ```
 
 - Запустите docker-compose `sudo docker-compose up -d` 
