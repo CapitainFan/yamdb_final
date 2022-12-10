@@ -33,7 +33,6 @@ http://notify.ddns.net/api/v1/
 
 ### Установка проекта (Linux Ubuntu)
 
-- Создайте папку для проекта YaMDb `mkdir yamdb` и перейдите в нее `cd yamdb`
 - Склонируйте этот репозиторий в текущую папку `git clone git@github.com:CapitainFan/yamdb_final.git`
 - Создайте файл `.env` командой `touch .env` и добавьте в него переменные окружения для работы с базой данных:
 
