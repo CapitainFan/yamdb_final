@@ -63,12 +63,12 @@ DB_PORT=5432
 { "username": "string", "confirmation_code": "string" }
 ```
 
-- Категории      /api/v1/categories/
-- Жанры         /api/v1/genres/
-- Произведения         /api/v1/titles/
-- Отзывы        /api/v1/titles/1/reviews/
-- Комментарии       /api/v1/titles/1/reviews/1/comments/
-- Пользователи          /api/v1/users/
+- Категории          /api/v1/categories/
+- Жанры              /api/v1/genres/
+- Произведения       /api/v1/titles/
+- Отзывы             /api/v1/titles/1/reviews/
+- Комментарии        /api/v1/titles/1/reviews/1/comments/
+- Пользователи       /api/v1/users/
 
 
 ## Автор
