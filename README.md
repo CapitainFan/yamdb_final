@@ -21,7 +21,7 @@
 
 ## Ссылка на мой проект :
 
-http://eloquence.ddns.net/admin/
+http://notify.ddns.net/api/v1/
 
 ## Как использовать проект
 
